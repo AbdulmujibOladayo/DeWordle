@@ -1,4 +1,4 @@
-# Wave Contributor Quickstart
+o# Wave Contributor Quickstart
 
 Welcome to the DeWordle Wave 5 contributor program. This page maps you to the right setup, commands, and first tasks based on your track.
 
