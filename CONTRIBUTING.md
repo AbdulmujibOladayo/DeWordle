@@ -2,8 +2,11 @@
 
 Thanks for contributing to the Soroban migration.
 
+## 📋 Critical First Step: Review the Repository Surface Map
+Before starting any work, **all contributors must review the [Repository Surface Map](./docs/REPO_SURFACE_MAP.md)** which defines our canonical maintained surfaces, transitional codebases, and legacy code. This single source of truth will guide you to the correct code paths for your contributions.
+
 ## Workstream Model
-Contributors are encouraged to work in parallel across:
+Contributors are encouraged to work in parallel across our **maintained canonical surfaces**:
 - Soroban contracts (`soroban/contracts`)
 - Shared crates (`soroban/crates`)
 - SDK (`soroban/sdk/ts`)
