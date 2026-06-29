@@ -42,10 +42,31 @@ node scripts/sync-env-docs.js --generate-reference
 | `NEXT_PUBLIC_FEATURE_REWARDS` | `false` | Enable the rewards feature (set to 'true' to enable) |
 | `NEXT_PUBLIC_FEATURE_ACHIEVEMENTS` | `false` | Enable the achievements feature (set to 'true' to enable) |
 
+## Local Development Profiles
+
+You can bootstrap your development environment with different profiles depending on what you're working on. Run the bootstrap script with one of the following profiles:
+
+| Profile | Command | What it includes | Required Environment Variables |
+|---------|---------|------------------|--------------------------------|
+| frontend-only | `npm run bootstrap:frontend` | Only the frontend application | `NEXT_PUBLIC_API_URL` |
+| indexer-only | `npm run bootstrap:indexer` | Backend and indexer services | `DB_HOST`, `DB_PORT`, `DB_USERNAME`, `DB_PASSWORD`, `DB_NAME`, `SOROBAN_RPC_URL` |
+| soroban-only | `npm run bootstrap:soroban` | Soroban smart contracts | `SOROBAN_RPC_URL`, `SOROBAN_NETWORK`, `SOROBAN_CORE_GAME_CONTRACT_ID` |
+| full-stack | `npm run bootstrap:fullstack` | Everything (frontend, backend, Soroban) | All environment variables |
+
+### Profile Usage
+
+1. **frontend-only**: Good for working on UI features without needing to run a full backend. Only requires Node.js and npm.
+2. **indexer-only**: For backend and indexer development, requires PostgreSQL.
+3. **soroban-only**: For smart contract development, requires Rust and Cargo.
+4. **full-stack**: Complete development environment with all services running.
+
+The bootstrap script will automatically copy the appropriate `.env.example` file to your local environment file if it doesn't exist, and guide you through the next steps to get started.
+
 ## Updating Environment Variables
 
 When adding new environment variables to the project:
 1. Add them to the appropriate service array in `scripts/env-definitions.js`
 2. Update any validation logic (e.g., backend's `src/config/env.validation.ts`)
 3. Regenerate example files: `node scripts/generate-env-examples.js --fix`
-4. Refresh this reference doc: `node scripts/sync-env-docs.js --generate-reference`
+4. If the new variable is required for any development profile, update `scripts/contributor-bootstrap.js` and this documentation
+5. Refresh this reference doc: `node scripts/sync-env-docs.js --generate-reference`
