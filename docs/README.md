@@ -4,6 +4,11 @@ Welcome to the central documentation index. Use the structured paths below to na
 
 ---
 
+## 🗺️ Critical First Reference: Repository Surface Map
+* **[Repository Surface Map: Maintained vs. Legacy](./REPO_SURFACE_MAP.md):** **START HERE FOR ALL CONTRIBUTORS** - The single source of truth for which code paths are canonical, transitional, or legacy. Understand which surfaces are actively maintained, which are in transition, and which are legacy before starting any development.
+
+---
+
 ## 🗺️ Core Architecture & Framework Tracks
 
 ### 🏗️ Blockchain & Smart Contracts

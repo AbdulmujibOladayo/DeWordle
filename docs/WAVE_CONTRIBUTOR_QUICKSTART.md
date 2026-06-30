@@ -1,4 +1,4 @@
-# Wave Contributor Quickstart
+o# Wave Contributor Quickstart
 
 Welcome to the DeWordle Wave 5 contributor program. This page maps you to the right setup, commands, and first tasks based on your track.
 
@@ -76,6 +76,7 @@ npm run verify:backend    # lint + typecheck + test
 ## Key Architecture Docs
 
 - [Architecture Overview](./ARCHITECTURE.md)
+- [Debug Recipe Catalog](./DEBUG_RECIPE_CATALOG.md) - Common issue fixes for wallet, RPC, database, and CI failures
 - [Soroban Foundation Architecture](./SOROBAN_FOUNDATION_ARCHITECTURE.md)
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md)
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md)
