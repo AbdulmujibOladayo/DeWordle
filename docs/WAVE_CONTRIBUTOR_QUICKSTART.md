@@ -81,7 +81,6 @@ Before running any track-specific commands, follow the complete local sandbox wa
 
 - [Architecture Overview](./ARCHITECTURE.md)
 - [Debug Recipe Catalog](./DEBUG_RECIPE_CATALOG.md) - Common issue fixes for wallet, RPC, database, and CI failures
-- [Local Sandbox Walkthrough](./LOCAL_SANDBOX_WALKTHROUGH.md) - Complete local environment setup and validation
 - [Soroban Foundation Architecture](./SOROBAN_FOUNDATION_ARCHITECTURE.md)
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md)
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md)
