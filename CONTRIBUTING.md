@@ -2,19 +2,8 @@
 
 Thanks for contributing to the Soroban migration.
 
-## 📋 Critical First Step: Review Repository Maps
-Before starting any work, **all contributors must review these two critical maps**:
-
-1. **[Repository Surface Map](./docs/REPO_SURFACE_MAP.md)** - Defines our canonical maintained surfaces, transitional codebases, and legacy code. This will guide you to the correct code paths for your contributions.
-2. **[Code Ownership & Reviewer Map](./docs/CODE_OWNERSHIP_MAP.md)** - Identifies the primary maintainers and fallback reviewers for every maintained surface. Use this to understand who will review your PR and which track owns the code you're modifying.
-
-## 🏃‍♂️ Second Critical Step: Set Up Your Local Sandbox
-After confirming you're working on a maintained surface, follow the complete [Local Sandbox Walkthrough](./docs/LOCAL_SANDBOX_WALKTHROUGH.md) to spin up your local development environment. This guide includes:
-- Step-by-step infrastructure setup (Postgres, Docker)
-- Soroban contract validation and testing
-- Backend indexer setup and health verification
-- Frontend wallet sandbox usage
-- Common pitfalls and recovery steps
+## 📋 Critical First Step: Review the Repository Surface Map
+Before starting any work, **all contributors must review the [Repository Surface Map](./docs/REPO_SURFACE_MAP.md)** which defines our canonical maintained surfaces, transitional codebases, and legacy code. This single source of truth will guide you to the correct code paths for your contributions.
 
 ## Workstream Model
 Contributors are encouraged to work in parallel across our **maintained canonical surfaces**:
@@ -66,7 +55,4 @@ The `/onchain/` directory contains outdated legacy code and is no longer maintai
 - Follow the PR template and complete the checklist
 
 ## Wave Readiness
-Use `docs/WAVE_MIGRATION_ISSUE_CANDIDATES.md` and `docs/SOROBAN_GITHUB_STRATEGY.md` for issue slicing and labels. Monitor reviewer load using:
-```bash
-node scripts/reviewer-load-heatmap.js
-```
+Use `docs/WAVE_MIGRATION_ISSUE_CANDIDATES.md` and `docs/SOROBAN_GITHUB_STRATEGY.md` for issue slicing and labels.
