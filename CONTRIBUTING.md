@@ -5,6 +5,14 @@ Thanks for contributing to the Soroban migration.
 ## 📋 Critical First Step: Review the Repository Surface Map
 Before starting any work, **all contributors must review the [Repository Surface Map](./docs/REPO_SURFACE_MAP.md)** which defines our canonical maintained surfaces, transitional codebases, and legacy code. This single source of truth will guide you to the correct code paths for your contributions.
 
+## 🏃‍♂️ Second Critical Step: Set Up Your Local Sandbox
+After confirming you're working on a maintained surface, follow the complete [Local Sandbox Walkthrough](./docs/LOCAL_SANDBOX_WALKTHROUGH.md) to spin up your local development environment. This guide includes:
+- Step-by-step infrastructure setup (Postgres, Docker)
+- Soroban contract validation and testing
+- Backend indexer setup and health verification
+- Frontend wallet sandbox usage
+- Common pitfalls and recovery steps
+
 ## Workstream Model
 Contributors are encouraged to work in parallel across our **maintained canonical surfaces**:
 - Soroban contracts (`soroban/contracts`)

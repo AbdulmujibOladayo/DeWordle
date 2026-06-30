@@ -47,6 +47,7 @@ cargo check --workspace
 
 ## Key Docs
 - **[Repository Surface Map](./docs/REPO_SURFACE_MAP.md)** - START HERE: Understand which code paths are maintained, transitional, or legacy
+- **[Local Sandbox Walkthrough](./docs/LOCAL_SANDBOX_WALKTHROUGH.md)** - NEXT STEP: Complete guide to running the local wallet sandbox, indexer, and Soroban tests
 - [Soroban Foundation Architecture](./docs/SOROBAN_FOUNDATION_ARCHITECTURE.md)
 - [Soroban Local Development](./docs/SOROBAN_LOCAL_DEV.md)
 - [Frontend Wallet Foundation](./docs/FRONTEND_WALLET_FOUNDATION.md)

@@ -9,6 +9,12 @@ Welcome to the central documentation index. Use the structured paths below to na
 
 ---
 
+## 🏃‍♂️ Local Development Walkthrough
+After reviewing the surface map, use this complete guide to spin up your local environment:
+* **[Local Sandbox Walkthrough: Wallet, Indexer, and Soroban Tests](./LOCAL_SANDBOX_WALKTHROUGH.md):** **NEXT STEP FOR ALL CONTRIBUTORS** - End-to-end guide to running the local wallet sandbox, backend indexer, and Soroban contract validation. Includes common pitfalls, recovery steps, and a full command sequence for fresh checkouts.
+
+---
+
 ## 🗺️ Core Architecture & Framework Tracks
 
 ### 🏗️ Blockchain & Smart Contracts

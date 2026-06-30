@@ -73,10 +73,15 @@ npm run verify:backend    # lint + typecheck + test
 
 ---
 
+## First: Local Environment Setup
+Before running any track-specific commands, follow the complete local sandbox walkthrough to get your environment running:
+- **[Local Sandbox Walkthrough: Wallet, Indexer, and Soroban Tests](./LOCAL_SANDBOX_WALKTHROUGH.md)** - End-to-end guide to spin up the full local stack, including wallet sandbox, indexer, and Soroban tests with troubleshooting for common issues.
+
 ## Key Architecture Docs
 
 - [Architecture Overview](./ARCHITECTURE.md)
 - [Debug Recipe Catalog](./DEBUG_RECIPE_CATALOG.md) - Common issue fixes for wallet, RPC, database, and CI failures
+- [Local Sandbox Walkthrough](./LOCAL_SANDBOX_WALKTHROUGH.md) - Complete local environment setup and validation
 - [Soroban Foundation Architecture](./SOROBAN_FOUNDATION_ARCHITECTURE.md)
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md)
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md)
