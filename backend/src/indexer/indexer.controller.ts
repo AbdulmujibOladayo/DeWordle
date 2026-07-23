@@ -81,7 +81,7 @@ export class IndexerController {
       data: [], // Handed off cleanly to index database reader
     };
   }
-}
+
   @Post('reset/projections')
   @ApiOperation({
     summary: 'Clear all projection data',
