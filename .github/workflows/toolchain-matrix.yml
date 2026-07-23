@@ -83,8 +83,11 @@ jobs:
       matrix:
         include:
           # ── Known-good (pinned stable) ──────────────────────────────────────
-          - rust: "1.85"
-            label: "supported (1.85 stable)"
+          # Raised from 1.85 → 1.88: darling@0.23 and serde_with@3.21
+          # (transitive deps of soroban-sdk) now require rustc ≥ 1.88.0.
+          # Verified from cargo check failure on 2026-07-23 (run #30005146252).
+          - rust: "1.88"
+            label: "supported (1.88 stable)"
             expect_success: true
           # ── Known-good (latest stable) ─────────────────────────────────────
           - rust: "stable"
@@ -140,7 +143,7 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: "1.85"
+          toolchain: "1.88"
 
       - name: Write known-good versions to summary
         run: |
