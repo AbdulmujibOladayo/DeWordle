@@ -67,10 +67,9 @@ export class IndexerController {
     return { status: 'ok', action: 'cursor_reset', network, streamKey };
   }
 
-
   @Get('records')
   @UsePipes(new ValidationPipe({ transform: true, whitelist: true }))
-  async getLedgerRecords(@Query() query: PaginationQueryDto) {
+  getLedgerRecords(@Query() query: PaginationQueryDto) {
     // Under this setup, query.limit is guaranteed to be <= 100
     return {
       success: true,
@@ -81,7 +80,7 @@ export class IndexerController {
       data: [], // Handed off cleanly to index database reader
     };
   }
-}
+
   @Post('reset/projections')
   @ApiOperation({
     summary: 'Clear all projection data',

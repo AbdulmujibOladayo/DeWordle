@@ -34,7 +34,8 @@ export class RegistrySnapshotService {
       network: input.network,
       contractId: input.contractId,
       registry: input.registry,
-      capturedAtLedger: input.capturedAtLedger ?? existing?.capturedAtLedger ?? 0,
+      capturedAtLedger:
+        input.capturedAtLedger ?? existing?.capturedAtLedger ?? 0,
     });
 
     const saved = await this.snapshotRepo.save(snapshot);

@@ -91,7 +91,7 @@ This Software Bill of Materials (SBOM) provides a comprehensive inventory of all
 
 ## Frontend Dependencies
 *Frontend directory not present in current working tree. When present, this section will include:
-- React/Vue/Next.js dependencies
+- React, Vue, or Next.js dependencies
 - Wallet integration libraries
 - Stellar/Soroban SDKs
 - UI component libraries*
