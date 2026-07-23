@@ -6,7 +6,7 @@ const cspHeader = `
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data:;
   font-src 'self';
-  connect-src 'self' https://horizon-testnet.stellar.org https://horizon.stellar.org https://*.sentry.io wss://*.socket.io;
+  connect-src 'self' https://horizon-testnet.stellar.org https://horizon.stellar.org https://soroban-testnet.stellar.org https://*.sentry.io wss://*.socket.io;
   frame-src 'none';
   object-src 'none';
   base-uri 'self';
@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/((path_to_match_all_routes_except_public_assets)*)",
+        // Apply security headers to all routes
+        source: "/(.*)",
         headers: [
           { key: "Content-Security-Policy", value: cspHeader },
           { key: "X-Frame-Options", value: "DENY" },
