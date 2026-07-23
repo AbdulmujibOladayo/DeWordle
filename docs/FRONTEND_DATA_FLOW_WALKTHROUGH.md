@@ -61,8 +61,8 @@ const { data } = useDayConfig(dayId); // Returns typed DayConfig from contract
 ```
 
 **File References**:
-- [core-game-client.ts](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/soroban/sdk/ts/core-game-client.ts)
-- [useContractRead.ts](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/frontend/src/hooks/useContractRead.ts)
+- [core-game-client.ts](../soroban/sdk/ts/core-game-client.ts)
+- [useContractRead.ts](../frontend/src/hooks/useContractRead.ts)
 
 ### Writing to Contract (Transaction Flow)
 When the frontend needs to change contract state (submit a guess):
@@ -98,8 +98,8 @@ await execute(transactionXdr, optimisticSessionId);
 ```
 
 **File References**:
-- [stellar-wallet-provider.tsx](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/frontend/src/providers/stellar-wallet-provider.tsx)
-- [useGameplayTx.ts](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/frontend/src/hooks/useGameplayTx.ts)
+- [stellar-wallet-provider.tsx](../frontend/src/providers/stellar-wallet-provider.tsx)
+- [useGameplayTx.ts](../frontend/src/hooks/useGameplayTx.ts)
 
 ---
 
@@ -129,8 +129,8 @@ For `session_finalized` events:
 **State Authority**: Backend projections are **transitional/cached state** - they're derived from contract events but not authoritative. The frontend can always fall back to direct contract reads if projections are stale.
 
 **File References**:
-- [event-processor.service.ts](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/backend/src/indexer/processors/event-processor.service.ts)
-- [projection.service.ts](file:///c:/Users/u-adamu/Desktop/DevMuhdishaq/DeWordle/backend/src/indexer/projections/projection.service.ts)
+- [event-processor.service.ts](../backend/src/indexer/processors/event-processor.service.ts)
+- [projection.service.ts](../backend/src/indexer/projections/projection.service.ts)
 
 ---
 

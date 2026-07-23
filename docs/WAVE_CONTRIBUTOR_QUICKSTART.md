@@ -79,12 +79,10 @@ Before running any track-specific commands, follow the complete local sandbox wa
 
 ## Key Architecture Docs
 
-- [Architecture Overview](./ARCHITECTURE.md)
 - [Debug Recipe Catalog](./DEBUG_RECIPE_CATALOG.md) - Common issue fixes for wallet, RPC, database, and CI failures
 - [Soroban Foundation Architecture](./SOROBAN_FOUNDATION_ARCHITECTURE.md)
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md)
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md)
-- [Security Foundation](./SECURITY_FOUNDATION.md)
 - [Wave 5 Execution Plan](./wave/WAVE5_EXECUTION_PLAN.md)
 - [Wave 5 Issue Tracks](./wave/WAVE5_ISSUE_TRACKS.md)
 

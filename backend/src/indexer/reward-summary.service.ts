@@ -15,7 +15,8 @@ const MAX_ATTEMPTS = 6;
 const POINTS_PER_LOST_SESSION = 0;
 
 function attemptsToPoints(attemptsUsed: number, status: string): number {
-  const won = status.toLowerCase() === 'won' || status.toLowerCase() === 'finalized';
+  const won =
+    status.toLowerCase() === 'won' || status.toLowerCase() === 'finalized';
   if (!won) return POINTS_PER_LOST_SESSION;
   const clamped = Math.max(1, Math.min(attemptsUsed, MAX_ATTEMPTS));
   return MAX_ATTEMPTS - clamped + 1;
@@ -28,7 +29,10 @@ export class RewardSummaryService {
     private readonly sessionsRepo: Repository<SessionProjectionEntity>,
   ) {}
 
-  async getForPlayer(network: string, player: string): Promise<RewardSummaryDto> {
+  async getForPlayer(
+    network: string,
+    player: string,
+  ): Promise<RewardSummaryDto> {
     const sessions = await this.sessionsRepo.find({
       where: { network, player, finalized: true },
       order: { updatedAt: 'DESC' },

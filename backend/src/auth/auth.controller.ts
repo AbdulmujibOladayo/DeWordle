@@ -81,7 +81,7 @@ export class AuthController {
     examples: {
       example1: {
         summary: 'Valid reset',
-        value: { token: 'reset-token', newPassword: 'newStrongPassword123' },
+        value: { token: 'reset-token', password: 'newStrongPassword123' },
       },
     },
   })
@@ -97,7 +97,7 @@ export class AuthController {
         statusCode: 400,
         message: [
           'token must be a string',
-          'newPassword must be longer than or equal to 8 characters',
+          'password must be longer than or equal to 8 characters',
         ],
         error: 'Bad Request',
       },
@@ -114,7 +114,7 @@ export class AuthController {
     },
   })
   async resetPassword(@Body() dto: ResetPasswordDto) {
-    await this.authService.resetPassword(dto.token, dto.newPassword);
+    await this.authService.resetPassword(dto.token, dto.password);
     return { message: 'Password has been reset successfully.' };
   }
 

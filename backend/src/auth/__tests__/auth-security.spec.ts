@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from '../auth.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { User } from '../../user/user.entity';
+import { User } from '../entities/user.entity';
 import { BadRequestException } from '@nestjs/common';
 import { Repository, MoreThan } from 'typeorm';
 
@@ -39,18 +39,18 @@ describe('SECURITY-208: Authentication Token Hardening Suite', () => {
   it('should mitigate user enumeration by returning a generic message for non-existent emails', async () => {
     jest.spyOn(repo, 'findOne').mockResolvedValue(null);
 
-    const result = await service.handleForgotPassword({ email: 'unknown@victim.com' });
-    expect(result.message).toContain('If the provided email matches an account');
+    const result = await service.forgotPassword('unknown@victim.com');
+    expect(result).toBeUndefined();
   });
 
   it('should instantly invalidate tokens upon use to prevent token replay attacks', async () => {
     jest.spyOn(repo, 'findOne').mockResolvedValue(mockUser as any);
     jest.spyOn(repo, 'save').mockResolvedValue({ ...mockUser, resetPasswordToken: null } as any);
 
-    await service.handleResetPassword({
-      token: 'active-secure-token-hash-xyz',
-      password: 'brand-new-secure-password-99',
-    });
+    await service.resetPassword(
+      'active-secure-token-hash-xyz',
+      'brand-new-secure-password-99',
+    );
 
     // Check that target persistence properties were reset to null
     expect(repo.save).toHaveBeenCalledWith(
@@ -65,10 +65,7 @@ describe('SECURITY-208: Authentication Token Hardening Suite', () => {
     jest.spyOn(repo, 'findOne').mockResolvedValue(null); // TypeORM MoreThan filter returns empty
 
     await expect(
-      service.handleResetPassword({
-        token: 'expired-token-signature',
-        password: 'securePassword123',
-      }),
+      service.resetPassword('expired-token-signature', 'securePassword123'),
     ).rejects.toThrow(BadRequestException);
   });
 });

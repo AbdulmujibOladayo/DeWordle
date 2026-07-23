@@ -158,4 +158,3 @@ All changes to this map require approval from the project lead (@kike-alt) and a
 - [Soroban Migration Plan](./SOROBAN_GITHUB_STRATEGY.md) - Full migration roadmap
 - [Indexer Architecture](./BACKEND_INDEXER_FOUNDATION.md) - Indexer deep dive
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md) - Wallet integration docs
-- [Current Wave Plan](./GITHUB_PROJECT_PLAN.md) - Current development priorities

@@ -26,7 +26,7 @@ After the first start (or after resetting the volume), run migrations:
 cd backend && npm run typeorm:migration:run
 ```
 
-See [docs/LOCAL_INFRA_STACK.md](./LOCAL_INFRA_STACK.md) for the full profile
+See the `docker-compose.yml` file for the full profile
 reference, environment variable table, and known limitations.
 
 ---

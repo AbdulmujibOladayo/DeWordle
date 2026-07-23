@@ -1,5 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { AdminRoleRegistry, type AdminRole } from '../../common/admin-role.registry';
+import {
+  AdminRoleRegistry,
+  type AdminRole,
+} from '../../common/admin-role.registry';
 import { type IngestedEventDto } from '../dto/ingested-event.dto';
 import { type IndexerLogContext } from '../indexer.service';
 
@@ -7,8 +10,12 @@ import { type IndexerLogContext } from '../indexer.service';
 export class AdminRegistryProcessorService {
   private readonly logger = new Logger(AdminRegistryProcessorService.name);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   process(event: IngestedEventDto, _context?: IndexerLogContext): boolean {
-    if (event.topic !== 'admin_role_registered' && event.topic !== 'admin_role_revoked') {
+    if (
+      event.topic !== 'admin_role_registered' &&
+      event.topic !== 'admin_role_revoked'
+    ) {
       return false;
     }
 

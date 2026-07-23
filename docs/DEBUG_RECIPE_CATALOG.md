@@ -8,7 +8,7 @@ A searchable, linkable catalog of repeatable debug recipes for the most common c
 - [RPC Interaction Failures](#rpc-interaction-failures)
 - [Database Connection & Migration Errors](#database-connection--migration-errors)
 - [CI/CD Pipeline Failures](#cicd-pipeline-failures)
-- [All Recipes Index](#all-recipes-index) (searchable list)
+- [All Recipes Index](#all-recipes-index-searchable) (searchable list)
 
 ---
 
@@ -317,5 +317,4 @@ For additional CI-specific debug recipes, see the [CI Troubleshooting Runbook](.
 - [CI Troubleshooting Runbook](./wave/CI_TROUBLESHOOTING_RUNBOOK.md)
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md)
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md)
-- [Local Infrastructure Stack](./LOCAL_INFRA_STACK.md)
 - [Soroban Local Dev Guide](./SOROBAN_LOCAL_DEV.md)

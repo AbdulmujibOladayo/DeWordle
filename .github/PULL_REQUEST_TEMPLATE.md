@@ -44,4 +44,4 @@ If your PR touches multiple tracks, you must complete this additional checklist:
 - [ ] All affected documentation updated across tracks
 - [ ] All dependent track maintainers tagged for review
 
-<!-- Reviewer: see docs/wave/REVIEWER_PLAYBOOK.md for lane assignments, SLA targets, and the cross-track PR maintainer review checklist -->
+<!-- Reviewer: see ../docs/wave/REVIEWER_PLAYBOOK.md for lane assignments, SLA targets, and the cross-track PR maintainer review checklist -->

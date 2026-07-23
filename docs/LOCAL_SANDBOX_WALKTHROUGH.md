@@ -260,5 +260,4 @@ When all services are running but something isn't working, follow this debug seq
 - [Backend Indexer Foundation](./BACKEND_INDEXER_FOUNDATION.md) - Deep dive into indexer architecture
 - [Frontend Wallet Foundation](./FRONTEND_WALLET_FOUNDATION.md) - Wallet integration details
 - [Soroban Local Development](./SOROBAN_LOCAL_DEV.md) - Advanced Soroban local development
-- [Local Infrastructure Stack](./LOCAL_INFRA_STACK.md) - Complete Docker Compose documentation
 - [Debug Recipe Catalog](./DEBUG_RECIPE_CATALOG.md) - More troubleshooting recipes
