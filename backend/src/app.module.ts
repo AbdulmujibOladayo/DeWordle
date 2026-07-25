@@ -19,6 +19,7 @@ import { IndexerModule } from './indexer/indexer.module';
 import { ReadApiController } from './common/read-api.controller';
 import { DeprecationController } from './common/deprecation.controller';
 import { AppCacheModule } from './common/cache.module';
+import { CacheMetricsService } from './common/cache-metrics.service';
 import { CacheLoggerService } from './common/cache-logger.service';
 import { VersioningModule } from './common/versioning.module';
 import { JobModule } from './common/job.module';
@@ -68,6 +69,6 @@ import { JobModule } from './common/job.module';
     JobModule,
   ],
   controllers: [AppController, MetricsController, ReadApiController, DeprecationController],
-  providers: [AppService, CacheLoggerService],
+  providers: [AppService, CacheLoggerService, CacheMetricsService],
 })
 export class AppModule {}
