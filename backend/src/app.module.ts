@@ -21,6 +21,7 @@ import { DeprecationController } from './common/deprecation.controller';
 import { AppCacheModule } from './common/cache.module';
 import { CacheLoggerService } from './common/cache-logger.service';
 import { VersioningModule } from './common/versioning.module';
+import { JobModule } from './common/job.module';
 
 @Module({
   imports: [
@@ -64,6 +65,7 @@ import { VersioningModule } from './common/versioning.module';
     IndexerModule,
     AppCacheModule,
     VersioningModule,
+    JobModule,
   ],
   controllers: [AppController, MetricsController, ReadApiController, DeprecationController],
   providers: [AppService, CacheLoggerService],
