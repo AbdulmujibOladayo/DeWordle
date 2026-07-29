@@ -1,15 +1,16 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { vi } from 'vitest';
 import { SettingsPanel } from '../components/SettingsPanel';
 import { SettingsProvider } from '../providers/settings-provider';
 
 describe('SettingsPanel - Reset Local Data (#1025)', () => {
   beforeEach(() => {
     localStorage.clear();
-    jest.spyOn(Storage.prototype, 'removeItem');
+    vi.spyOn(Storage.prototype, 'removeItem');
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('renders "Reset Local Data" button and opens confirmation modal on click', () => {
