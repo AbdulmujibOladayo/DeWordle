@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { SettingsPanel } from '../SettingsPanel';
-import { SettingsProvider } from '../../context/SettingsContext';
+import { SettingsPanel } from '../components/SettingsPanel';
+import { SettingsProvider } from '../providers/settings-provider';
 
 describe('SettingsPanel - Reset Local Data (#1025)', () => {
   beforeEach(() => {
