@@ -103,7 +103,7 @@ export class DictionaryHelper {
 
         if (axiosError.response) {
           const { status } = axiosError.response;
-          if (status === 404 || (status >= 400 && status < 500)) {
+          if (status === 404 || (status >= 400 && status < 500 && status !== 429)) {
             throw error;
           }
 
