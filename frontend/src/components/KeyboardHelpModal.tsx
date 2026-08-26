@@ -61,11 +61,19 @@ export function KeyboardHelpModal({ open, onClose }: KeyboardHelpModalProps) {
 
     if (open) {
       previousFocusRef.current = document.activeElement as HTMLElement;
-      dialog.showModal();
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
       const firstButton = dialog.querySelector<HTMLElement>("button");
       firstButton?.focus();
     } else {
-      dialog.close();
+      if (typeof dialog.close === "function") {
+        dialog.close();
+      } else {
+        dialog.removeAttribute("open");
+      }
       previousFocusRef.current?.focus();
     }
   }, [open]);
