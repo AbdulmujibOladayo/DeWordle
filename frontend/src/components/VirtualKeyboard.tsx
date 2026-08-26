@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 
 export type KeyStatus = 'correct' | 'present' | 'absent' | 'idle';
 
@@ -33,6 +33,16 @@ interface KeyButtonProps {
   wide?: boolean;
 }
 
+function areKeyButtonPropsEqual(prev: KeyButtonProps, next: KeyButtonProps): boolean {
+  return (
+    prev.label === next.label &&
+    prev.status === next.status &&
+    prev.disabled === next.disabled &&
+    prev.wide === next.wide &&
+    prev.onClick === next.onClick
+  );
+}
+
 const KeyButton = React.memo(function KeyButton({
   label,
   status,
@@ -61,7 +71,7 @@ const KeyButton = React.memo(function KeyButton({
       {displayLabel}
     </button>
   );
-});
+}, areKeyButtonPropsEqual);
 
 export function VirtualKeyboard({
   onKeyPress,
