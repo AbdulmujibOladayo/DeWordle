@@ -39,7 +39,7 @@ describe('validateGuess', () => {
   });
 
   it('rejects guess with special characters', () => {
-    const result = validateGuess('A@#$', validWords);
+    const result = validateGuess('A@#$%', validWords);
     expect(result.isValid).toBe(false);
     expect(result.error).toContain('only letters');
   });
@@ -52,6 +52,11 @@ describe('validateGuess', () => {
 
   it('accepts lowercase guess and normalizes', () => {
     const result = validateGuess('apple', validWords);
+    expect(result.isValid).toBe(true);
+  });
+
+  it('strips surrounding whitespace before validation', () => {
+    const result = validateGuess('  apple  ', validWords);
     expect(result.isValid).toBe(true);
   });
 });
@@ -69,28 +74,24 @@ describe('calculateLetterStatuses', () => {
 
   it('marks present when letter exists but wrong position', () => {
     const statuses = calculateLetterStatuses('PPPLE', 'APPLE');
-    expect(statuses[0]).toBe('present');
+    expect(statuses[0]).toBe('absent');
     expect(statuses[1]).toBe('correct');
     expect(statuses[2]).toBe('correct');
     expect(statuses[3]).toBe('correct');
     expect(statuses[4]).toBe('correct');
   });
 
-  it('marks absent for duplicate letter when only one in target', () => {
-    const statuses = calculateLetterStatuses('LLAMA', 'APPLE');
-    expect(statuses[0]).toBe('absent');
-    expect(statuses[1]).toBe('present');
-    expect(statuses[2]).toBe('absent');
-    expect(statuses[3]).toBe('absent');
-    expect(statuses[4]).toBe('correct');
+  it('marks only one duplicate letter as present when target has one', () => {
+    const statuses = calculateLetterStatuses('LLXXX', 'APPLE');
+    expect(statuses).toEqual(['present', 'absent', 'absent', 'absent', 'absent']);
   });
 
   it('handles mixed statuses correctly', () => {
     const statuses = calculateLetterStatuses('PARSE', 'APPLE');
     expect(statuses[0]).toBe('present');
-    expect(statuses[1]).toBe('correct');
+    expect(statuses[1]).toBe('present');
     expect(statuses[2]).toBe('absent');
-    expect(statuses[3]).toBe('correct');
+    expect(statuses[3]).toBe('absent');
     expect(statuses[4]).toBe('correct');
   });
 

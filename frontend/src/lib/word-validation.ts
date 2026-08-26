@@ -7,24 +7,26 @@ const WORD_LENGTH = 5;
 const VALID_LETTERS = /^[A-Z]+$/;
 
 export function validateGuess(guess: string, validWords: string[]): ValidationResult {
-  if (!guess) {
+  const normalizedGuess = guess.trim().toUpperCase();
+
+  if (!normalizedGuess) {
     return { isValid: false, error: 'Guess cannot be empty' };
   }
 
-  if (guess.length !== WORD_LENGTH) {
+  if (normalizedGuess.length !== WORD_LENGTH) {
     return {
       isValid: false,
-      error: `Guess must be exactly ${WORD_LENGTH} letters. Got ${guess.length}.`,
+      error: `Guess must be exactly ${WORD_LENGTH} letters. Got ${normalizedGuess.length}.`,
     };
   }
 
-  if (!VALID_LETTERS.test(guess)) {
+  if (!VALID_LETTERS.test(normalizedGuess)) {
     return { isValid: false, error: 'Guess must contain only letters A-Z' };
   }
 
-  const upperGuess = guess.toUpperCase();
-  if (!validWords.includes(upperGuess)) {
-    return { isValid: false, error: `"${upperGuess}" is not a valid word` };
+  const normalizedWords = new Set(validWords.map((word) => word.trim().toUpperCase()));
+  if (!normalizedWords.has(normalizedGuess)) {
+    return { isValid: false, error: `"${normalizedGuess}" is not a valid word` };
   }
 
   return { isValid: true };
